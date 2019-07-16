@@ -1,0 +1,268 @@
+tempest (1:19.0.0-4) unstable; urgency=medium
+
+  * Uploading to unstable.
+
+ -- Thomas Goirand <zigo@debian.org>  Wed, 17 Jul 2019 00:47:28 +0200
+
+tempest (1:19.0.0-3) experimental; urgency=medium
+
+  * Removed Python 2 support.
+
+ -- Thomas Goirand <zigo@debian.org>  Wed, 27 Mar 2019 16:49:02 +0100
+
+tempest (1:19.0.0-2) unstable; urgency=medium
+
+  * python3-tempest now runtime depends on python3-neutron-tempest-plugin.
+
+ -- Thomas Goirand <zigo@debian.org>  Mon, 08 Oct 2018 18:28:28 +0200
+
+tempest (1:19.0.0-1) unstable; urgency=medium
+
+  [ Michal Arbet ]
+  * New upstream version
+  * d/control: Edit Maintainer field
+  * d/control: Add me to Uploaders field
+  * d/control: Edit dependencies versions
+
+  [ Ondřej Nový ]
+  * d/changelog: Remove trailing whitespaces
+
+  [ Thomas Goirand ]
+  * Switch to stestr.
+
+ -- Michal Arbet <michal.arbet@ultimum.io>  Wed, 18 Jul 2018 13:54:37 +0100
+
+tempest (1:17.2.0-8) unstable; urgency=medium
+
+  * Really fixed Python 3 shebang.
+
+ -- Thomas Goirand <zigo@debian.org>  Fri, 23 Mar 2018 13:40:32 +0000
+
+tempest (1:17.2.0-7) unstable; urgency=medium
+
+  * Fixed Python 3 shebang.
+
+ -- Thomas Goirand <zigo@debian.org>  Sun, 18 Mar 2018 20:45:56 +0000
+
+tempest (1:17.2.0-6) unstable; urgency=medium
+
+  * Set PYTHON=python3 in the tempest_debian_shell_wrapper, otherwise tests
+    can't be discovered.
+
+ -- Thomas Goirand <zigo@debian.org>  Mon, 12 Mar 2018 13:20:25 +0000
+
+tempest (1:17.2.0-5) unstable; urgency=medium
+
+  * Make the /var/lib/tempest/tempest symlink target the py3 lib.
+  * Make the tempest binary depend on python3-tempest first.
+
+ -- Thomas Goirand <zigo@debian.org>  Sun, 11 Mar 2018 23:34:58 +0000
+
+tempest (1:17.2.0-4) unstable; urgency=medium
+
+  * Python 3 now has priority over Python 2.
+
+ -- Thomas Goirand <zigo@debian.org>  Sun, 11 Mar 2018 20:45:25 +0000
+
+tempest (1:17.2.0-3) unstable; urgency=medium
+
+  * Uploading to unstable.
+
+ -- Thomas Goirand <zigo@debian.org>  Mon, 26 Feb 2018 00:21:13 +0000
+
+tempest (1:17.2.0-2) experimental; urgency=medium
+
+  [ Ondřej Nový ]
+  * d/control: Set Vcs-* to salsa.debian.org
+
+  [ Thomas Goirand ]
+  * Cleans properly (Closes: #890859).
+
+ -- Thomas Goirand <zigo@debian.org>  Tue, 20 Feb 2018 07:40:50 +0000
+
+tempest (1:17.2.0-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Fixed (build-)depends for this release.
+  * Add using stestr, it seems tempest uses both.
+  * Blacklist test_list_tests.TestTestList.test_stestr_list_no_error().
+
+ -- Thomas Goirand <zigo@debian.org>  Sun, 11 Feb 2018 15:40:34 +0000
+
+tempest (1:17.0.0-5) unstable; urgency=medium
+
+  * Add e2fsprogs, as it's used at least in heat's integration_tests.
+
+ -- Thomas Goirand <zigo@debian.org>  Fri, 26 Jan 2018 11:45:24 +0100
+
+tempest (1:17.0.0-4) unstable; urgency=medium
+
+  * Add heat_integrationtests.common.config to .conf namespace.
+  * Add python-heat as build-depends (because of config namespace).
+
+ -- Thomas Goirand <zigo@debian.org>  Mon, 04 Dec 2017 08:09:07 +0000
+
+tempest (1:17.0.0-3) unstable; urgency=medium
+
+  * Add missing runtime depends: python{3,}-{testscenarios,gabbi}.
+
+ -- Thomas Goirand <zigo@debian.org>  Sat, 25 Nov 2017 01:46:54 +0100
+
+tempest (1:17.0.0-2) unstable; urgency=medium
+
+  * Add Breaks:+Replaces: tempest-lib (Closes: #879907).
+  * Uploading to unstable:
+    - Fix FTBFS with Python 3.6 (Closes: #867907).
+  * Uploading to unstable.
+  * Added python-oslo.i18n as build-depends, needed for the generation fo the
+    config file.
+
+ -- Thomas Goirand <zigo@debian.org>  Sat, 28 Oct 2017 10:48:33 +0000
+
+tempest (1:17.0.0-1) experimental; urgency=medium
+
+  [ Ondřej Nový ]
+  * Bumped debhelper compat version to 10
+
+  [ Daniel Baumann ]
+  * Updating vcs fields.
+  * Updating copyright format url.
+  * Running wrap-and-sort -bast.
+  * Updating maintainer field.
+  * Updating standards version to 4.0.0.
+  * Removing gbp.conf, not used anymore or should be specified in the
+    developers dotfiles.
+  * Correcting permissions in debian packaging files.
+  * Updating standards version to 4.0.1.
+  * Prefixing all debhelper files.
+  * Updating standards version to 4.1.0.
+
+  [ Thomas Goirand ]
+  * New upstream release.
+  * Fixed (build-)depends for this release.
+  * Removed now useless do-not-use-git-when-building-doc.patch.
+  * Removed installation of Heat's .yaml files (removed upstream).
+  * Define http{s,}_proxy to avoid network access when building doc.
+  * Remove setting-up run-tempest-stress & tempest-cleanup alternatives.
+
+ -- Thomas Goirand <zigo@debian.org>  Sun, 24 Sep 2017 18:29:24 +0200
+
+tempest (1:12.2.0-1) unstable; urgency=medium
+
+  * Uploading to unstable.
+  * Blacklist failing test:
+    - TestTestList.test_testr_list_tests_no_errors
+
+ -- Thomas Goirand <zigo@debian.org>  Tue, 04 Oct 2016 15:22:26 +0200
+
+tempest (1:12.2.0-0) experimental; urgency=medium
+
+  * New upstream release.
+  * Fixed (build-)depends for this release.
+  * Removed fix-privacy-breach.patch.
+  * Fixed oslotest EPOCH.
+  * Using OpenStack's Gerrit as VCS URLs.
+  * Added .gitreview in extend-diff-ignore.
+  * Removed javelin2 from update-alternatives.
+
+ -- Thomas Goirand <zigo@debian.org>  Wed, 28 Sep 2016 10:23:17 +0200
+
+tempest (1:12.1.0-3) experimental; urgency=medium
+
+  * Team upload.
+  * Added python-pep8 to build depends (Closes: #834888)
+
+ -- Ondřej Nový <onovy@debian.org>  Sun, 21 Aug 2016 21:29:32 +0200
+
+tempest (1:12.1.0-2) experimental; urgency=medium
+
+  * Added a debian/bin containing a "tempest" shell script, and add that to the
+    $PATH before launching unit tests.
+
+ -- Thomas Goirand <zigo@debian.org>  Wed, 13 Jul 2016 09:20:19 +0000
+
+tempest (1:12.1.0-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Fixed (build-)depends for this release.
+  * Added missing python{3,}-{ddt,oslotest} runtime Depends.
+  * Set [volume-feature-enabled]/volume_services to true.
+  * Using pkgos-dh_auto_{test,install} from openstack-pkg-tools >= 52~.
+  * Don't attempt to run the test:
+    cmd.test_subunit_describe_calls.TestSubunitDescribeCalls.test_return_code
+    as subunit-describe-calls is not available in /usr/bin at build time.
+  * Add subunit-describe-calls to the list of update-alternatives programs.
+
+ -- Thomas Goirand <zigo@debian.org>  Thu, 16 Jun 2016 21:25:28 +0200
+
+tempest (1:12.0.0-2) experimental; urgency=medium
+
+  * Added Python3 support.
+  * Renamed the tempest man page to tempest_shell_wrapper.1
+  * Remove privacy breanch in docs.
+  * Add Breaks+Replaces+Provides: python{3,}-tempest-lib.
+
+ -- Thomas Goirand <zigo@debian.org>  Mon, 06 Jun 2016 10:32:52 +0200
+
+tempest (1:12.0.0-1) experimental; urgency=medium
+
+  [ Ondřej Nový ]
+  * Standards-Version is 3.9.8 now (no change)
+  * Added python-murano as build-depends to be able to generate the
+    tempest.conf options for it.
+  * d/rules: Removed UPSTREAM_GIT with default value
+  * d/copyright: Changed source URL to https protocol
+
+  [ Corey Bryant ]
+  * New upstream release.
+  * d/gbp.conf: Update branch to debian/newton.
+  * d/control: Align (Build-)Depends with upstream.
+  * d/changelog: Add epoch 1 to version to replace Ubuntu version 2014.1.*.
+
+  [ Thomas Goirand ]
+  * Added Corey Bryant <corey.bryant@canonical.com> as uploaders.
+
+ -- Thomas Goirand <zigo@debian.org>  Sun, 05 Jun 2016 22:42:33 +0000
+
+tempest (10.0.0-1) experimental; urgency=medium
+
+  [ Ondřej Nový ]
+  * Fixed VCS URLs (https).
+  * Also install tempest/api/orchestration/stacks/templates/*.json.
+
+  [ Thomas Goirand ]
+  * New upstream release.
+  * Fixed (build-)depends for this release.
+  * Added patch to remove the use of git in sphinx's conf.py.
+  * Added manila in namespace config.
+  * Generating tempest.conf with the namespace for the congress, manila,
+    mistral, murano (and therefore, build-depends on them).
+  * Fixed debian/copyright ordering.
+  * Standards-Version: 3.9.7 (no change).
+  * Do not copy tools/colorizer.py.
+  * Fix a few config option defaults.
+  * Also install missing .yaml files.
+
+ -- Thomas Goirand <zigo@debian.org>  Tue, 15 Mar 2016 13:10:03 +0100
+
+tempest (6-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Fixed (build-)depends for this release.
+  * Generates config file using oslo-config-generator.
+  * Do not use verbose mode by default.
+
+ -- Thomas Goirand <zigo@debian.org>  Wed, 23 Sep 2015 09:32:43 +0200
+
+tempest (4-2) unstable; urgency=medium
+
+  * Makes build reproducible (Closes: #789749). Thanks to Juan Picca for the
+    bug report and patch.
+
+ -- Thomas Goirand <zigo@debian.org>  Fri, 26 Jun 2015 15:23:46 +0200
+
+tempest (4-1) unstable; urgency=medium
+
+  * Initial release (Closes: #750164).
+
+ -- Thomas Goirand <zigo@debian.org>  Mon, 04 May 2015 22:17:41 +0200
