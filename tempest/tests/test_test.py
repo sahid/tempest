@@ -531,14 +531,15 @@ class TestTempestBaseTestClassFixtures(base.TestCase):
     def test_skip_only(self):
         # If a skip condition is hit in the test, no credentials or resource
         # is provisioned / cleaned-up
-        self.mocks['skip_checks'].side_effect = (
-            testtools.testcase.TestSkipped())
+        exc, _ = test.BaseTestCase.handle_skip_exception()
+        self.mocks['skip_checks'].side_effect = (exc)
         suite = unittest.TestSuite((self.test,))
         log = []
         result = LoggingTestResult(log)
         suite.run(result)
         # If we trigger a skip condition, teardown is not invoked at all
-        self.assertEqual(self.SETUP_FIXTURES[:2],
+        self.assertEqual((self.SETUP_FIXTURES[:2] +
+                          [self.TEARDOWN_FIXTURES[0]]),
                          self.test.fixtures_invoked)
 
     def test_skip_credentials_fails(self):

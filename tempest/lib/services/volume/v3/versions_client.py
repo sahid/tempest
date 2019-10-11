@@ -14,6 +14,8 @@
 
 import time
 
+from six.moves.urllib.parse import urljoin
+
 from oslo_serialization import jsonutils as json
 
 from tempest.lib.api_schema.response.volume import versions as schema
@@ -28,7 +30,7 @@ class VersionsClient(base_client.BaseClient):
 
         For a full list of available parameters, please refer to the official
         API reference:
-        https://developer.openstack.org/api-ref/block-storage/v3/#list-all-api-versions
+        https://docs.openstack.org/api-ref/block-storage/v3/#list-all-api-versions
         """
         version_url = self._get_base_version_url()
 
@@ -44,4 +46,23 @@ class VersionsClient(base_client.BaseClient):
 
         body = json.loads(body)
         self.validate_response(schema.list_versions, resp, body)
+        return rest_client.ResponseBody(resp, body)
+
+    def show_version(self, version):
+        """Show API version details
+
+        Use raw_request in order to have access to the endpoints minus
+        version and project in order to add version only back.
+
+        For a full list of available parameters, please refer to the official
+        API reference:
+        https://docs.openstack.org/api-ref/block-storage/v3/#show-api-v3-details
+        """
+
+        version_url = urljoin(self._get_base_version_url(), version + '/')
+        resp, body = self.raw_request(version_url, 'GET',
+                                      {'X-Auth-Token': self.token})
+        self._error_checker(resp, body)
+        body = json.loads(body)
+        self.validate_response(schema.volume_api_version_details, resp, body)
         return rest_client.ResponseBody(resp, body)
