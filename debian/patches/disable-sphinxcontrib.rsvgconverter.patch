@@ -1,0 +1,14 @@
+Description: Disable sphinx extension until packaged
+Author: James Page <james.page@ubuntu.com>
+Fowarded: not-needed
+
+--- a/doc/source/conf.py
++++ b/doc/source/conf.py
+@@ -52,7 +52,6 @@ def setup(app):
+ extensions = ['sphinx.ext.autodoc',
+               'sphinx.ext.todo',
+               'sphinx.ext.viewcode',
+-              'sphinxcontrib.rsvgconverter',
+               'openstackdocstheme',
+               'oslo_config.sphinxconfiggen',
+              ]
