@@ -1,11 +1,11 @@
-tempest (1:22.0.0-0ubuntu1) UNRELEASED; urgency=medium
+tempest (1:22.0.0-0ubuntu1) eoan; urgency=medium
 
   * New upstream release for OpenStack Train.
   * d/p/disable-sphinxcontrib.rsvgconverter.patch: Disable use of
     rsvgconverter during document build until this extension is
     packaged.
 
- -- James Page <james.page@ubuntu.com>  Fri, 11 Oct 2019 11:41:23 +0100
+ -- James Page <james.page@ubuntu.com>  Fri, 11 Oct 2019 12:02:20 +0100
 
 tempest (1:19.0.0-4) unstable; urgency=medium
 
