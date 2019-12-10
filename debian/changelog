@@ -3,6 +3,7 @@ tempest (1:22.0.0-2ubuntu1) UNRELEASED; urgency=low
   * Merge from Debian unstable.  Remaining changes:
     - d/p/disable-sphinxcontrib.rsvgconverter.patch: Dropped in favor
       of d/p/disable-sphinxcontrib.rsvgconverter.patch.
+  * d/gbp.conf: Add default confs.
 
  -- Sahid Orentino Ferdjaoui <sahid.ferdjaoui@canonical.com>  Tue, 10 Dec 2019 14:52:36 +0100
 
