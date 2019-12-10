@@ -47,7 +47,7 @@ Build-Depends-Indep:
  python3-yaml,
  subunit,
  testrepository,
-Standards-Version: 4.3.0
+Standards-Version: 4.4.1
 Vcs-Browser: https://salsa.debian.org/openstack-team/libs/tempest
 Vcs-Git: https://salsa.debian.org/openstack-team/libs/tempest.git
 Homepage: https://github.com/openstack/tempest

@@ -1,1 +1,1 @@
-disable-sphinxcontrib.rsvgconverter.patch
+remove-sphinxcontrib.rsvgconverter-from-doc.patch

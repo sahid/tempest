@@ -1,3 +1,28 @@
+tempest (1:22.0.0-2ubuntu1) UNRELEASED; urgency=low
+
+  * Merge from Debian unstable.  Remaining changes:
+    - d/p/disable-sphinxcontrib.rsvgconverter.patch: Dropped in favor
+      of d/p/disable-sphinxcontrib.rsvgconverter.patch.
+
+ -- Sahid Orentino Ferdjaoui <sahid.ferdjaoui@canonical.com>  Tue, 10 Dec 2019 14:52:36 +0100
+
+tempest (1:22.0.0-2) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * Bump Standards-Version to 4.4.1.
+
+  [ Thomas Goirand ]
+  * Uploading to unstable.
+
+ -- Thomas Goirand <zigo@debian.org>  Wed, 23 Oct 2019 00:51:29 +0200
+
+tempest (1:22.0.0-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Add remove-sphinxcontrib.rsvgconverter-from-doc.patch.
+
+ -- Thomas Goirand <zigo@debian.org>  Tue, 08 Oct 2019 09:13:17 +0200
+
 tempest (1:22.0.0-0ubuntu1) eoan; urgency=medium
 
   * New upstream release for OpenStack Train.
@@ -6,6 +31,17 @@ tempest (1:22.0.0-0ubuntu1) eoan; urgency=medium
     packaged.
 
  -- James Page <james.page@ubuntu.com>  Fri, 11 Oct 2019 12:02:20 +0100
+
+tempest (1:21.0.0-1) experimental; urgency=medium
+
+  [ Ondřej Nový ]
+  * Use debhelper-compat instead of debian/compat.
+  * Bump Standards-Version to 4.4.0.
+
+  [ Thomas Goirand ]
+  * New upstream release.
+
+ -- Thomas Goirand <zigo@debian.org>  Sat, 05 Oct 2019 22:15:04 +0200
 
 tempest (1:19.0.0-4) unstable; urgency=medium
 
@@ -275,3 +311,4 @@ tempest (4-1) unstable; urgency=medium
   * Initial release (Closes: #750164).
 
  -- Thomas Goirand <zigo@debian.org>  Mon, 04 May 2015 22:17:41 +0200
+
