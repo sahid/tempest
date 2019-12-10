@@ -1,11 +1,12 @@
-tempest (1:22.0.0-2ubuntu1) UNRELEASED; urgency=low
+tempest (1:22.1.0-0ubuntu1) UNRELEASED; urgency=low
 
   * Merge from Debian unstable.  Remaining changes:
     - d/p/disable-sphinxcontrib.rsvgconverter.patch: Dropped in favor
       of d/p/disable-sphinxcontrib.rsvgconverter.patch.
   * d/gbp.conf: Add default confs.
+  * New upstream release for OpenStack Ussuri.
 
- -- Sahid Orentino Ferdjaoui <sahid.ferdjaoui@canonical.com>  Tue, 10 Dec 2019 14:52:36 +0100
+ -- Sahid Orentino Ferdjaoui <sahid.ferdjaoui@canonical.com>  Tue, 10 Dec 2019 15:31:28 +0100
 
 tempest (1:22.0.0-2) unstable; urgency=medium
 
